@@ -8,7 +8,7 @@
 
 [data-theme="dark"] {
   --background: rgb(49, 95, 114);
-  --background-on-load: rgba(49, 95, 114, 0.8);
+  --background-on-load: rgba(18, 35, 43, 0.8);
   --on-background: #f57e7e;
 }
 
