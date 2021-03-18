@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
 
+:root {
+  --background: #eee;
+  --background-on-load: rgba(255, 255, 255, 0.8);
+  --on-background: #315f72;
+}
+
+[data-theme="dark"] {
+  --background: rgb(49, 95, 114);
+  --background-on-load: rgba(49, 95, 114, 0.8);
+  --on-background: #f57e7e;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -7,9 +19,9 @@ html {
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  background: whitesmoke;
+  background: var(--background);
   overflow-x: hidden;
-  background: #efb5a3;
+  transition: 0.4s;
 }
 
 h1 {
@@ -20,7 +32,7 @@ h1 {
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #315f72;
+  color: var(--on-background);
 }
 
 /* Loader */
@@ -30,7 +42,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--background-on-load);
 }
 
 .loader img {
@@ -62,4 +74,80 @@ h1 {
   .image-container {
     margin: 0.9rem 5%;
   }
+}
+
+/* Dark mode toggle */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 25px;
+  top: 30px;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  top: -4px;
+  right: 5px;
+  color: var(--on-background);
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background: #ccc;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider::before {
+  content: "";
+  background: #fff;
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  bottom: 4px;
+  left: 4px;
+  transition: 0.4s;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+input:checked + .slider::before {
+  background: var(--on-background);
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.fas {
+  font-size: 30px;
+  margin-right: 5px;
 }

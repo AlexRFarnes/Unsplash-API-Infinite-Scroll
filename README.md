@@ -36,6 +36,7 @@ List of features ready and TODOs for future development
 - Fetch API
 - Unsplash API
 - Infinite Scroll
+- Dark mode
 
 ## Status
 

@@ -1,6 +1,6 @@
 // Unsplash API
 const count = 30;
-const apiKey = '';
+const apiKey = '7cwdNkLVYU9S1EIqh32i4s7pkZLmunCICuZaD1lkqII';
 const API_Url = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&orientation=landscape`;
 
 // https://api.unsplash.com/photos/random/?client_id=Q2IYI00-m9qT27QSlR7V_do1vJzYpuzJBUKIVoDZpQU&count=30&orientation=landscape
@@ -70,3 +70,40 @@ window.addEventListener('scroll', (event) => {
 
 // On Load
 getPhotos();
+
+
+// Dark mode
+const toggleSwitch = document.querySelector('input[type="checkbox"');
+const toggleIcon = document.getElementById('toggle-icon');
+
+
+function toggleMode(mode) {
+    toggleIcon.children[0].textContent = mode === 'dark' ? 'Dark Mode' : 'Light Mode';
+    mode === 'dark' ?  toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon'): toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
+}
+
+function switchTheme({ target }) {
+    if(target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggleMode('dark')
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggleMode('light')
+    }
+} 
+
+
+toggleSwitch.addEventListener('change', switchTheme);
+
+// Check for the user's preferences
+const currentTheme =  localStorage.getItem('theme');
+if(currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if(currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+        toggleMode('dark')
+    }
+}
