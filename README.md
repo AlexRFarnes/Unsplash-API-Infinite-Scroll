@@ -14,7 +14,7 @@
 
 ## General info
 
-Practice use of the Fetch API with async/await to retrieve random pictures from the Unsplash API. Also, practice the scroll and load event listener to estimate when to make the next call to the API for a smooth infinite scroll.
+Practice use of the Fetch API with async/await to retrieve random pictures from the Unsplash API. Also, practice the scroll and load event listener to estimate when to make the next call to the API for a smooth infinite scroll. Includes a custome loader when retrieving the first batch of images from Unsplash.
 
 ## Screenshots
 
