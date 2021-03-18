@@ -1,6 +1,6 @@
 // Unsplash API
 const count = 30;
-const apiKey = '7cwdNkLVYU9S1EIqh32i4s7pkZLmunCICuZaD1lkqII';
+const apiKey = '';
 const API_Url = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}&orientation=landscape`;
 
 // https://api.unsplash.com/photos/random/?client_id=Q2IYI00-m9qT27QSlR7V_do1vJzYpuzJBUKIVoDZpQU&count=30&orientation=landscape
